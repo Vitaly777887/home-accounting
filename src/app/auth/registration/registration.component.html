@@ -1,0 +1,66 @@
+<p class="text-xs-center">Регистрация для получения доступа</p>
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <mat-form-field class="full-width">
+    <input matInput
+           type="text"
+           placeholder="Введите ваш email"
+           formControlName="email">
+    <mat-error *ngFor="let validation of validation_messages.email">
+      <mat-error class="error-message"
+                 *ngIf="form.get('email').hasError(validation.type) && (form.get('email').dirty || form.get('email').touched)"
+      >
+        {{validation.message}}
+      </mat-error>
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field class="full-width">
+    <input matInput
+           type="password"
+           placeholder="Пароль"
+           formControlName="password">
+    <mat-error *ngFor="let validation of validation_messages.password">
+      <mat-error class="error-message"
+                 *ngIf="form.get('password').hasError(validation.type) && (form.get('password').dirty || form.get('password').touched)"
+      >
+        {{validation.message}}
+      </mat-error>
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field class="full-width">
+    <input matInput
+           type="text"
+           placeholder="Введите ваше имя"
+           formControlName="name">
+    <mat-error *ngFor="let validation of validation_messages.name">
+      <mat-error class="error-message"
+                 *ngIf="form.get('name').hasError(validation.type) && (form.get('name').dirty || form.get('name').touched)"
+      >
+        {{validation.message}}
+      </mat-error>
+    </mat-error>
+  </mat-form-field>
+
+  <mat-checkbox formControlName="agree">
+    Согласен с правилами
+  </mat-checkbox>
+  <div>
+    <button
+      type="submit"
+      class="btn btn-block btn-primary"
+      [disabled]="form.invalid"
+    >
+      Зарегистрироваться
+    </button>
+  </div>
+
+  <div>
+    <p class="text-muted text-xs-center">
+      Уже есть аккаунт?
+      <a [routerLink]="'/login'">
+        Войти!
+      </a>
+    </p>
+  </div>
+</form>
