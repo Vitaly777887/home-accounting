@@ -17,6 +17,7 @@ import {
   MatSnackBarModule,
   MatToolbarModule
 } from '@angular/material';
+import {NgxChartsModule} from '@swimlane/ngx-charts';
 
 @NgModule({
   imports: [
@@ -37,6 +38,7 @@ import {
     MatSlideToggleModule,
     MatCheckboxModule,
     MatSnackBarModule,
+    NgxChartsModule,
   ],
   exports: [
     ReactiveFormsModule,
@@ -55,7 +57,8 @@ import {
     MatOptionModule,
     MatSlideToggleModule,
     MatCheckboxModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    NgxChartsModule,
   ]
 })
 export class SharedModule {
