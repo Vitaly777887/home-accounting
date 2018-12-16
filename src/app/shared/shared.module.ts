@@ -2,7 +2,8 @@ import {NgModule} from '@angular/core';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {
   MatButtonModule,
-  MatCardModule, MatCheckboxModule,
+  MatCardModule,
+  MatCheckboxModule,
   MatDatepickerModule,
   MatFormFieldModule,
   MatIconModule,
@@ -13,6 +14,7 @@ import {
   MatRadioModule,
   MatSelectModule,
   MatSlideToggleModule,
+  MatSnackBarModule,
   MatToolbarModule
 } from '@angular/material';
 
@@ -33,7 +35,8 @@ import {
     MatSelectModule,
     MatOptionModule,
     MatSlideToggleModule,
-    MatCheckboxModule
+    MatCheckboxModule,
+    MatSnackBarModule,
   ],
   exports: [
     ReactiveFormsModule,
@@ -51,7 +54,8 @@ import {
     MatSelectModule,
     MatOptionModule,
     MatSlideToggleModule,
-    MatCheckboxModule
+    MatCheckboxModule,
+    MatSnackBarModule
   ]
 })
 export class SharedModule {

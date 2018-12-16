@@ -6,6 +6,7 @@ import {UsersService} from '../../shared/services/users.service';
 import {User} from '../../shared/models/user.model';
 import {Message} from '../../shared/models/message.model';
 import {AuthService} from '../../shared/services/auth.service';
+import {ShowMessageService} from '../../shared/services/show-message.service';
 
 @Component({
   selector: 'login',
@@ -31,19 +32,16 @@ export class LoginComponent implements OnInit {
   constructor(private usersService: UsersService,
               private authService: AuthService,
               private router: Router,
-              private route: ActivatedRoute) {
+              private route: ActivatedRoute,
+              private showMessage: ShowMessageService) {
   }
 
   ngOnInit() {
-    this.message = new Message('danger', '');
 
     this.route.queryParams
       .subscribe((params: Params) => {
         if (params['nowCanLogin']) {
-          this.showMessage({
-            text: 'Теперь вы можете зайти в систему',
-            type: 'success'
-          });
+          this.showMessage.show(new Message('success', 'Теперь вы можете зайти в систему'));
         }
       });
 
@@ -53,14 +51,6 @@ export class LoginComponent implements OnInit {
     });
   }
 
-  private showMessage(message: Message) {
-    this.message = message;
-
-    window.setTimeout(() => {
-      this.message.text = '';
-    }, 5000);
-  }
-
   onSubmit() {
     const formData = this.form.value;
 
@@ -68,23 +58,16 @@ export class LoginComponent implements OnInit {
       .subscribe((user: User) => {
         if (user) {
           if (user.password === formData.password) {
-            this.message.text = '';
             window.localStorage.setItem('user', JSON.stringify(user));
             this.authService.login();
             this.router.navigate(['/system', 'bill']);
           } else {
-            this.showMessage({
-              text: 'Пароль не верный',
-              type: 'danger'
-            });
+            this.showMessage.show(new Message('Пароль не верный', 'danger'));
           }
         } else {
-          this.showMessage({
-            text: 'Такого пользователя не существует',
-            type: 'danger'
-          });
+          this.showMessage.show(new Message('Такого пользователя не существует',
+            'danger'));
         }
       });
   }
-
 }
