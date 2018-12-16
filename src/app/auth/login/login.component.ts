@@ -16,7 +16,6 @@ import {ShowMessageService} from '../../shared/services/show-message.service';
 export class LoginComponent implements OnInit {
 
   form: FormGroup;
-  message: Message;
   validation_messages = {
     'email': [
       {type: 'required', message: 'Email не может быть пустым.'},

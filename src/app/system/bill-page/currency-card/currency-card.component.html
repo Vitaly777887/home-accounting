@@ -14,14 +14,9 @@
           </tr>
           </thead>
           <tbody>
-          <tr>
-            <td>RUB</td>
-            <td>1</td>
-            <td>{{ currency.date | moment:'YYYY-MM-DD' }}</td>
-          </tr>
           <tr *ngFor="let c of currencies">
-            <td>{{ c }}</td>
-            <td>{{ currency.rates[c] }}</td>
+            <td>{{ c.key }}</td>
+            <td>{{ c.curr | number:'.2' }}</td>
             <td>{{ currency.date | moment:'YYYY-MM-DD' }}</td>
           </tr>
           </tbody>
