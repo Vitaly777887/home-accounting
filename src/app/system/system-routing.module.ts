@@ -3,15 +3,17 @@ import {RouterModule, Routes} from '@angular/router';
 
 import {SystemComponent} from './system.component';
 import {BillPageComponent} from './bill-page/bill-page.component';
+import {RecordsPageComponent} from './records-page/records-page.component';
 
 
 const routes: Routes = [
+
   {
     path: 'system', component: SystemComponent, children: [
       {path: 'bill', component: BillPageComponent},
-     // {path: 'history', component: },
-      // {path: 'planning', component: },
-      // {path: 'records', component: }
+      //  {path: 'history', component: HistoryPageComponent},
+      // {path: 'planning', component: PlanningPageComponent},
+      {path: 'records', component: RecordsPageComponent}
     ]
   }
 ];
