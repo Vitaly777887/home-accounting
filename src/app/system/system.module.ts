@@ -18,6 +18,8 @@ import {CategoriesService} from './shared/services/categories.service';
 import {EventsService} from './shared/services/events.service';
 import {AddCategoryComponent} from './records-page/add-category/add-category.component';
 import {DropdownDirective} from './shared/directives/dropdown.directive';
+import {PlanningPageComponent} from './planning-page/planning-page.component';
+import {HistoryPageComponent} from './history-page/history-page.component';
 
 @NgModule({
   imports: [
@@ -38,6 +40,8 @@ import {DropdownDirective} from './shared/directives/dropdown.directive';
     RecordsPageComponent,
     MomentPipe,
     DropdownDirective,
+    PlanningPageComponent,
+    HistoryPageComponent,
   ],
   providers: [BillService, CategoriesService, EventsService]
 })
