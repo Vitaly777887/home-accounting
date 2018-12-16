@@ -10,7 +10,7 @@
 </div>
 
 <div *ngIf="!isLoaded" class="text-center">
-  Loading ...
+  <loader></loader>
 </div>
 <div *ngIf="isLoaded">
   <history-chart [data]="chartData"></history-chart>

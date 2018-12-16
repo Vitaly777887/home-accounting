@@ -18,8 +18,12 @@ import {
   MatToolbarModule
 } from '@angular/material';
 import {NgxChartsModule} from '@swimlane/ngx-charts';
+import {LoaderComponent} from './components/loader/loader.component';
 
 @NgModule({
+  declarations: [
+    LoaderComponent
+  ],
   imports: [
     ReactiveFormsModule,
     FormsModule,
@@ -59,6 +63,7 @@ import {NgxChartsModule} from '@swimlane/ngx-charts';
     MatCheckboxModule,
     MatSnackBarModule,
     NgxChartsModule,
+    LoaderComponent,
   ]
 })
 export class SharedModule {
