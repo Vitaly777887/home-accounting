@@ -6,6 +6,7 @@ import {Message} from '../models/message.model';
 export class ShowMessageService {
   constructor(private  snackBar: MatSnackBar) {
   }
+
   show(message: Message): void {
     const config = new MatSnackBarConfig();
     config.verticalPosition = 'top';

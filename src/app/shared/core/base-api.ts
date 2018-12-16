@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {Observable} from 'rxjs/index';
 import {HttpClient} from '@angular/common/http';
 
@@ -6,7 +6,7 @@ import {HttpClient} from '@angular/common/http';
 export class BaseApi {
   private baseUrl = 'http://localhost:3000/';
 
-  constructor(public http: HttpClient) {
+  constructor(protected http: HttpClient) {
   }
 
   private getUrl(url: string = ''): string {

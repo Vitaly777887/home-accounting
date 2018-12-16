@@ -14,11 +14,12 @@ export class BillCardComponent implements OnInit {
   dollar: number;
   euro: number;
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit() {
-    const { rates } = this.currency;
-    this.euro =  this.bill.value / rates['RUB'];
+    const {rates} = this.currency;
+    this.euro = this.bill.value / rates['RUB'];
     this.dollar = this.euro * rates['USD'];
   }
 }
