@@ -40,7 +40,12 @@ export class LoginComponent implements OnInit {
     this.route.queryParams
       .subscribe((params: Params) => {
         if (params['nowCanLogin']) {
-          this.showMessage.show(new Message('success', 'Теперь вы можете зайти в систему'));
+          this.showMessage.show(new Message('Теперь вы можете зайти в систему', 'success'));
+        } else {
+          if (params['accessDenied']) {
+            this.showMessage.show(new Message('Для работы с системой вам необходимо войти', 'warning'));
+
+          }
         }
       });
 

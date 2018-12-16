@@ -7,9 +7,9 @@ import {AuthModule} from './auth/auth.module';
 import {AppRoutingModule} from './app-routing.module';
 import {UsersService} from './shared/services/users.service';
 import {AuthService} from './shared/services/auth.service';
-import {SystemModule} from './system/system.module';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {ShowMessageService} from './shared/services/show-message.service';
+import {AuthGuard} from './shared/services/auth.guard';
 
 @NgModule({
   declarations: [
@@ -20,10 +20,9 @@ import {ShowMessageService} from './shared/services/show-message.service';
     HttpClientModule,
     BrowserAnimationsModule,
     AuthModule,
-    AppRoutingModule,
-    SystemModule
+    AppRoutingModule
   ],
-  providers: [UsersService, AuthService, ShowMessageService],
+  providers: [UsersService, AuthService, ShowMessageService, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule {
