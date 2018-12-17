@@ -39,6 +39,10 @@ export class LoginComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.form = new FormGroup({
+      'email': new FormControl(null, [Validators.required, Validators.email]),
+      'password': new FormControl(null, [Validators.required, Validators.minLength(6)])
+    });
 
     this.route.queryParams
       .subscribe((params: Params) => {
@@ -47,15 +51,9 @@ export class LoginComponent implements OnInit {
         } else {
           if (params['accessDenied']) {
             this.showMessage.show(new Message('Для работы с системой вам необходимо войти', 'warning'));
-
           }
         }
       });
-
-    this.form = new FormGroup({
-      'email': new FormControl(null, [Validators.required, Validators.email]),
-      'password': new FormControl(null, [Validators.required, Validators.minLength(6)])
-    });
   }
 
   onSubmit() {

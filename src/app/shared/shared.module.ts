@@ -1,22 +1,6 @@
 import {NgModule} from '@angular/core';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-import {
-  MatButtonModule,
-  MatCardModule,
-  MatCheckboxModule,
-  MatDatepickerModule,
-  MatFormFieldModule,
-  MatIconModule,
-  MatInputModule,
-  MatMenuModule,
-  MatNativeDateModule,
-  MatOptionModule,
-  MatRadioModule,
-  MatSelectModule,
-  MatSlideToggleModule,
-  MatSnackBarModule,
-  MatToolbarModule
-} from '@angular/material';
+import {MatSnackBarModule} from '@angular/material';
 import {NgxChartsModule} from '@swimlane/ngx-charts';
 import {LoaderComponent} from './components/loader/loader.component';
 
@@ -27,43 +11,15 @@ import {LoaderComponent} from './components/loader/loader.component';
   imports: [
     ReactiveFormsModule,
     FormsModule,
-    MatButtonModule,
-    MatMenuModule,
-    MatToolbarModule,
-    MatIconModule,
-    MatCardModule,
-    MatFormFieldModule,
-    MatInputModule,
-    MatDatepickerModule,
-    MatNativeDateModule,
-    MatRadioModule,
-    MatSelectModule,
-    MatOptionModule,
-    MatSlideToggleModule,
-    MatCheckboxModule,
-    MatSnackBarModule,
     NgxChartsModule,
+    MatSnackBarModule,
   ],
   exports: [
     ReactiveFormsModule,
     FormsModule,
-    MatButtonModule,
-    MatMenuModule,
-    MatToolbarModule,
-    MatIconModule,
-    MatCardModule,
-    MatFormFieldModule,
-    MatInputModule,
-    MatDatepickerModule,
-    MatNativeDateModule,
-    MatRadioModule,
-    MatSelectModule,
-    MatOptionModule,
-    MatSlideToggleModule,
-    MatCheckboxModule,
-    MatSnackBarModule,
     NgxChartsModule,
     LoaderComponent,
+    MatSnackBarModule,
   ]
 })
 export class SharedModule {
