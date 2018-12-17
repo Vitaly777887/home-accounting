@@ -4,6 +4,7 @@ import {Router} from '@angular/router';
 
 import {UsersService} from '../../shared/services/users.service';
 import {User} from '../../shared/models/user.model';
+import {Title} from '@angular/platform-browser';
 
 @Component({
   selector: 'registration',
@@ -30,7 +31,9 @@ export class RegistrationComponent implements OnInit {
   };
 
   constructor(private usersService: UsersService,
-              private router: Router) {
+              private router: Router,
+              private title: Title) {
+    this.title.setTitle('Регистрация');
   }
 
   ngOnInit() {

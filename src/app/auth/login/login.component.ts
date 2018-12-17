@@ -7,6 +7,7 @@ import {User} from '../../shared/models/user.model';
 import {Message} from '../../shared/models/message.model';
 import {AuthService} from '../../shared/services/auth.service';
 import {ShowMessageService} from '../../shared/services/show-message.service';
+import {Title} from '@angular/platform-browser';
 
 @Component({
   selector: 'login',
@@ -32,7 +33,9 @@ export class LoginComponent implements OnInit {
               private authService: AuthService,
               private router: Router,
               private route: ActivatedRoute,
-              private showMessage: ShowMessageService) {
+              private showMessage: ShowMessageService,
+              private title: Title) {
+    this.title.setTitle('Вход в систему');
   }
 
   ngOnInit() {
